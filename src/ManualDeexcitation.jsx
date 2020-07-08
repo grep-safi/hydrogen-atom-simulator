@@ -30,8 +30,7 @@ export default class ManualDeexcitation extends React.Component {
     }
 
     changeCurrentSelection(e) {
-        this.currentSelection = e.target.value;
-        this.currentSelection = Number(this.currentSelection);
+        this.currentSelection = Number(e.target.value);
     }
 
     dropToNewLevel() {
