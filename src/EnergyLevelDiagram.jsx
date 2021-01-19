@@ -17,10 +17,6 @@ export default class EnergyLevelDiagram extends React.Component {
         super(props);
     }
 
-    componentDidUpdate(prevProps, prevState, snapShot) {
-
-    }
-
     render() {
 
         const energyLevelValues = [-13.6, -3.4, -1.5, -0.9, -0.5, -0.4, -0.35];

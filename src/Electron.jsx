@@ -23,7 +23,6 @@ export default class Electron extends React.Component {
             .attr("r", 7)
             .attr("fill", "green");
 
-        // makeDraggable(this.ref.current, this.up);
         this.makeDraggable(this.ref.current);
     }
 
@@ -51,7 +50,6 @@ export default class Electron extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         // If the photon wasn't fired, simply return
-        // console.log(`emit?? ${this.props.emitted}`);
         if (!(this.props.moveElectron || this.props.emitted) || this.props.electronIsBeingDragged) return;
 
         if (this.props.moveElectron) this.moveElectron();
@@ -81,7 +79,6 @@ export default class Electron extends React.Component {
             y = 0;
         }
 
-        // select(node).transition().attr('transform', `translate(${x}, ${y})`).duration(500).on("end", this.sendToRandomLoc.bind(this));
         select(node).transition().attr('transform', `translate(${x}, ${y})`).duration(500);
 
         this.props.changeElectronState(false);

@@ -82,10 +82,6 @@ const renderEventEntries = () => {
                 <path strokeDasharray="2,2" d="M 10 0 L 240 0" />
             </g>
 
-
-            {/*Text that shows the event number (index)*/}
-            {/*<text {...numEventText} >{index}</text>*/}
-
             <text {...leftTextProps} >{data.electronEvent}</text>
             <text {...rightTextProps} >{rightHandText}</text>
             <text {...rightBottomTextProps} >{data.photonEvent}</text>
@@ -103,29 +99,10 @@ const renderEventEntries = () => {
     }
 }
 
-// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-// const useMountEffect = (fun) => useEffect(fun, [])
-
-// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-
-
 export default class EventLog extends React.Component {
     constructor(props) {
         super(props);
         this.myRef = React.createRef();
-    }
-
-    scrollToMyRef() {
-        // window.scrollTo(0, this.myRef.current.offsetTop);
-        // console.log(`scolling now`);
-        // const el = document.getElementById("dearScotty");
-        // el.scrollTop = 50;
-        // this.myRef.scrollTo(0, 100);
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        // console.log(`scrolling`);
-        // this.scrollToMyRef();
     }
 
     render() {
@@ -133,13 +110,10 @@ export default class EventLog extends React.Component {
         if (this.props.eventLog.length > 5) adjustedHeight += (this.props.eventLog.length - 5) * 50;
 
         return (
-            // <div ref={this.myRef} style={{height: `${adjustedHeight}`}}>
             <div id={"dearScott"} ref={this.myRef}  style={{height: `${adjustedHeight}px`}} >
                 <svg id={"dearScotty"} ref={this.myRef} width={WIDTH} height={adjustedHeight}>
                     <g>{ this.props.eventLog.map(renderEventEntries()) }</g>
                 </svg>
-
-                {/*<button onClick={this.scrollToMyRef.bind(this)}> Click to scroll </button>*/}
             </div>
         );
     }
